@@ -9,8 +9,7 @@ class App extends Component {
   //   this.props.store.dispatch(addItem());
   // }
   
-  class App extends Component {
- 
+  
   handleOnClick = event => {
     this.props.addItem()
   }

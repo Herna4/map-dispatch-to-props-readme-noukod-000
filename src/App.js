@@ -8,6 +8,10 @@ class App extends Component {
   // handleOnClick() {
   //   this.props.store.dispatch(addItem());
   // }
+  
+  handleOnClick = event => {
+    this.props.addItem() // Code change: this.props.dispatch.store is no longer being called
+  }
 
   render() {
     return (

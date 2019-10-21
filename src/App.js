@@ -9,14 +9,17 @@ class App extends Component {
   //   this.props.store.dispatch(addItem());
   // }
   
+  class App extends Component {
+ 
   handleOnClick = event => {
-    this.props.addItem() // Code change: this.props.dispatch.store is no longer being called
+    this.props.addItem()
   }
-
+ 
   render() {
+    debugger
     return (
       <div className="App">
-        <button onClick={(event) => this.handleOnClick(event)}>
+        <button onClick={this.handleOnClick}>
           Click
           </button>
         <p>{this.props.items.length}</p>
@@ -24,11 +27,11 @@ class App extends Component {
     );
   }
 };
-
+ 
 const mapStateToProps = (state) => {
   return {
     items: state.items
   };
 };
-
-export default connect(mapStateToProps)(App);
+ 
+export default connect(mapStateToProps, { addItem })(App); // Code change: no mapDispatchToProps function required!
